@@ -25,5 +25,4 @@
         android:text="Continue"
         android:layout_gravity="center"/>
 
-
 </LinearLayout>

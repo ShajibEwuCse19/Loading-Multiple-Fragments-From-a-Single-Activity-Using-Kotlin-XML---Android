@@ -9,6 +9,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) myFragment()
+        //loadFragmentLifecycle() //open logcat to see the output of the fragment lifecycle
 
     }
 
@@ -31,5 +32,12 @@ class MainActivity : AppCompatActivity() {
             ?.replace(R.id.main, SecondFragment())
             ?.addToBackStack("") //if we click back button it will go to the main fragment (remember the transaction -> replace() the main fragment)
             ?.commit()
+    }
+
+    fun loadFragmentLifecycle() {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.main, FragmentLifecycle())
+            .commit()
     }
 }
